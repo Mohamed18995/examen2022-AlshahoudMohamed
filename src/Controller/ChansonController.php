@@ -60,7 +60,7 @@ class ChansonController extends AbstractController
       $entityManager->persist($chanson);
       $entityManager->flush();
 
-      return $this->redirectToRoute('home');
+      return $this->redirectToRoute('app_home');
 
     }
     return $this->render('chanson/add.html.twig', ['form' =>$form->createView()]);
