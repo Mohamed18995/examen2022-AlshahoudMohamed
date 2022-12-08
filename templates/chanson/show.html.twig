@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ chanson.titre }}{% endblock %}
+
+{% block body %}
+<style>
+  .example-wrapper {margin: 1rem; border: 10px solid; width:500px; margin: 5rem; padding-left: 20px}
+  .date {color: red; font-weight: bold;}
+</style>
+
+<div class="example-wrapper">
+    <h1> {{ chanson.titre}} </h1>
+    <p>{{chanson.NomAlbum}}</p>
+    <p class="date">Date de sortie : {{ chanson.DateSortie|date("d/m/Y") }}</p>
+    <p class="date">Date de l'ajout : {{ chanson.DateAjout|date("d/m/Y") }}</p>
+    <p>{{chanson.paroles}}</p>
+    <p>{{chanson.auteur}}</p>
+    <p> Votes : {{ chanson.votes}} </p>
+    <a href="{{path('chanson_edit', {"id" : chanson.id})}}" class="btn btn-success">Modifier</a>
+    <a href="" class="btn btn-success">Supprimer</a>
+        
+</div>
+{% endblock %}

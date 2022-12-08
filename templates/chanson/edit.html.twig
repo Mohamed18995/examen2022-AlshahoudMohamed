@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% form_theme editForm 'bootstrap_5_layout.html.twig' %}
+{% block title %}Modifier le chanson{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+   <h1> Modifiez le chanson</h1>
+   {{ form_start(editForm) }}
+   {{ form_widget(editForm) }}
+
+   <button class="btn btn-success"> Modifier</button>
+   {{form_end(editForm)}}
+</div>
+{% endblock %}

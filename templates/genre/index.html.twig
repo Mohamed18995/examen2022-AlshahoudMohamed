@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Genres{% endblock %}
+
+{% block body %}
+<style>
+  ul{list-style-type: none;}
+  h2{display: inline-block; font-size: 15px; margin-left: 15px; margin-top: 15px; border: 10px solid; color: white;}
+</style>
+
+<div class="example-wrapper">
+      <h1> Genres ✅</h1>
+      <ul>
+        {% for genre in genres %}
+          <a href="{{ path('afficher_genre', { id: genre.id } )}}">
+            <h2>{{genre.nom}}</h2>
+          </a>
+        {% endfor%}
+      </ul>
+        
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}afficher les chansons{% endblock %}
+
+{% block body %}
+<style>
+.wrapper{width: 65%; margin: 2.5rem;}
+  .example-wrapper{display: inline-block; font-size: 10px; margin-left: 15px; margin-top: 15px;}
+  h2{padding-left: 15px;}
+  p{display: inline-block; color: blue;}
+</style>
+<div class="wrapper">
+  <h1>Bienvenue</h1>
+  <h2>Liste des chansons</h2>
+  {% for chanson in chansons %}
+
+    <div >
+        <a class="answer-link" href="{{ path('afficher_chanson', { id: chanson.id }) }}">
+          <p>{{ chanson.titre }}  </p>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
